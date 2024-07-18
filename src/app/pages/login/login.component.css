@@ -1,0 +1,45 @@
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/*
+.body{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  background-color: azure;
+}
+img{
+  width: 50%;
+}
+.login{
+  width: 100%;
+  max-width: 330px;
+  text-align: center;
+}
+.caja{
+  width: 80%;
+}
+.boton{
+  height: 50px;
+}
+*/

@@ -1,0 +1,44 @@
+<div class="container">
+  <h2 mat-dialog-title class="titulo">{{ title }} Rol</h2>
+  <mat-dialog-content class="formulario">
+    <form [formGroup]="forms">
+      <mat-form-field class="caja" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          placeholder="Ejemplo: Admin"
+          formControlName="name"
+          type="text"
+          autocomplete="off"
+        />
+        <mat-error>El nombre es requerido</mat-error>
+      </mat-form-field>
+      <br />
+      <br />
+    </form>
+  </mat-dialog-content>
+  <mat-dialog-actions class="botones">
+    <button
+      type="button"
+      [disabled]="forms.invalid || role.action == 'ver'"
+      mat-raised-button
+      class="boton"
+      color="primary"
+      (click)="save()"
+    >
+      Aceptar
+    </button>
+    <span class="example-spacer"></span>
+    <span class="example-spacer"></span>
+    <button
+      mat-dialog-close
+      type="button"
+      mat-raised-button
+      class="boton"
+      color="primary"
+    >
+      Volver
+    </button>
+  </mat-dialog-actions>
+</div>
+

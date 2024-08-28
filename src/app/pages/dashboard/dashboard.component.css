@@ -1,4 +1,85 @@
-.sd-ancho {
-  /* Establece el ancho deseado */
-  width: 400px;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
+
+/* Estructura principal del dashboard */
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* Estilo del contenido principal */
+.main-content {
+  flex-grow: 1;
+  background-color: #ecf0f1;
+  padding: 20px;
+}
+
+/* Estilo del encabezado */
+.header {
+  background-color: #2980b9;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerh1 {
+  font-size: 24px;
+}
+
+.user-info {
+  font-size: 18px;
+}
+
+/* Estilo de las tarjetas */
+.content {
+  display: flex;
+  gap: 20px;
+}
+/*
+.card {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 02px4pxrgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1;
+}
+
+.cardh3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.cardp {
+  font-size: 16px;
+  color: #7f8c8d;
+}*/
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+}
+/**/

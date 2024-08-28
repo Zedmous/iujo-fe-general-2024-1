@@ -12,6 +12,7 @@
           autocomplete="off"
         />
         <mat-error>El nombre es requerido</mat-error>
+        <mat-error *ngIf="nameError">{{ nameError }}</mat-error>
       </mat-form-field>
       <br />
       <br />

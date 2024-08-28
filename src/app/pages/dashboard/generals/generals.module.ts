@@ -3,14 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { GeneralsRoutingModule } from './generals-routing.module';
 import { GeneralsComponent } from './generals.component';
-import { ListRolesComponent } from './list-roles/list-roles.component';
-import { FormRolesComponent } from './form-roles/form-roles.component';
+import { FormRolesComponent } from './roles/form-roles/form-roles.component';
 import { SharedModule } from '../../../shared/shared.module';
+import { HomeComponent } from './home/home.component';
+import { ListRolesComponent } from './roles/list-roles/list-roles.component';
 
 
 @NgModule({
   declarations: [
     GeneralsComponent,
+    HomeComponent,
     ListRolesComponent,
     FormRolesComponent
   ],

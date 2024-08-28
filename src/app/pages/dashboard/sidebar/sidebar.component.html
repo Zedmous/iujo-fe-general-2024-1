@@ -1,0 +1,15 @@
+<aside class="sidebar">
+  <h2>Menu</h2>
+  <ul>
+    <li class="nav-item" *ngFor="let menu of menus">
+      <div class="accordion-header" (click)="toggle(menu)" >
+        {{ menu.text }}
+      </div>
+      <ul class="accordion-content" *ngIf="menu.open">
+        <li *ngFor="let subMenu of menu.subMenus">
+          <a class="sidebar-link" [routerLink]="subMenu.link">{{ subMenu.text }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</aside>

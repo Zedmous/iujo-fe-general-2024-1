@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListRolesComponent } from './list-roles/list-roles.component';
-import { FormRolesComponent } from './form-roles/form-roles.component';
+import { FormRolesComponent } from './roles/form-roles/form-roles.component';
+import { HomeComponent } from './home/home.component';
+import { ListRolesComponent } from './roles/list-roles/list-roles.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   {
-    path: '', component: ListRolesComponent
+    path: 'roles',
+    component: ListRolesComponent,
   },
-  {
-    path: 'crear-role', component: FormRolesComponent
-  },
+
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class GeneralsRoutingModule { }
+export class GeneralsRoutingModule {}

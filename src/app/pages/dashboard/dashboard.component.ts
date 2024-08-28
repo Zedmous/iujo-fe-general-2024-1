@@ -8,16 +8,5 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 })
 export class DashboardComponent {
-  datos:any[]=[{
-    name:"ed",
-  },
-  {
-    name:"an",
-  },
-  {
-    name:"ma",
-  },{
-    name:"gi",
-  }
-]
+
 }

@@ -65,6 +65,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatDatepickerModule,
     MatExpansionModule,
     MatDividerModule,
+    MatIconModule
   ],
 })
 export class MaterialModule {}

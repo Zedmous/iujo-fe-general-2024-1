@@ -1,12 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { RoleInterface } from '../../../../core/interfaces/role.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
-import { RoleService } from '../../../../core/services/role.service';
 import { FormRolesComponent } from '../form-roles/form-roles.component';
+import { RoleInterface } from '../../../../../core/interfaces/role.interface';
+import { RoleService } from '../../../../../core/services/role.service';
 
 @Component({
   selector: 'app-list-roles',
@@ -16,10 +16,7 @@ import { FormRolesComponent } from '../form-roles/form-roles.component';
 export class ListRolesComponent {
   loading: boolean = false;
   roles: RoleInterface[] = [];
-  displayedColumns: string[] = [
-    'name',
-
-  ];
+  displayedColumns: string[] = ['name', 'operaciones'];
   dataSource = new MatTableDataSource(this.roles);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -45,11 +42,11 @@ export class ListRolesComponent {
   getAll() {
     this.loading = true;
     this.rolesService.getAll().subscribe(
-      (res:any) => {
+      (res: any) => {
         this.loading = false;
         this.dataSource = new MatTableDataSource(res.data.roles);
       },
-      (err:any) => {
+      (err: any) => {
         this.loading = false;
       }
     );
@@ -125,11 +122,19 @@ export class ListRolesComponent {
       })
       .afterClosed()
       .toPromise();
-
     if (!updatedData) return;
-    const list = this.dataSource.data;
+    /*const list = this.dataSource.data;
     const itemIndex = list.findIndex((i) => i.id === role.id);
     list[itemIndex] = updatedData;
-    this.dataSource.data = list;
+    this.dataSource.data = list;*/
+
+    // Encuentra el índice del rol que se está editando
+    const list = this.dataSource.data;
+    const itemIndex = list.findIndex((i) => i.id === updatedData.role.id); // Usa updatedData para encontrar el índice
+
+    if (itemIndex !== -1) {
+      list[itemIndex] = updatedData.role; // Actualiza el rol en la lista
+      this.dataSource.data = [...list]; // Asigna la nueva lista a dataSource
+    }
   }
 }

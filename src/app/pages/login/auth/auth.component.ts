@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from '../../../core/interfaces/user';
+import { UserInterface } from '../../../core/interfaces/user.interface';
 import { Router } from '@angular/router';
 import { LoginService } from '../../../core/services/login.service';
 
@@ -12,7 +12,7 @@ import { LoginService } from '../../../core/services/login.service';
 export class AuthComponent {
   forms: FormGroup;
   loading: Boolean = false;
-  user: Partial<User> = {
+  user: Partial<UserInterface> = {
     email: "",
     password: ""
   }

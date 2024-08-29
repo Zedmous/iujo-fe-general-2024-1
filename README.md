@@ -29,7 +29,9 @@ Es un frontend para una aplicacion web sobre gestión turistica.
 
 ### Especificaciones técnicas / Referencias
 
-- Documentación oficial `https://expressjs.com/` 
+- Documentación oficial `https://angular.dev/` 
+- Documentación oficial `https://material.angular.io/`
+- Documentación oficial `https://nodejs.org/en`
 
 #### Requerimientos previos:
 - Html
@@ -129,8 +131,8 @@ ng serve
 ```
 
 ## Dependencias instaladas
-| °   | Paquete                            | Versión         |
-| --- | ---------------------------------- | --------------- |
+| °   | Paquete                            | Versión        |
+| --- | ---------------------------------- | ---------------|
 |  1  | `@angular/animations`              | `^18.0.0`      |
 |  2  | `@angular/cdk`                     | `^18.0.6`      |
 |  3  | `@angular/common`                  | `^18.0.0`      |
@@ -141,10 +143,10 @@ ng serve
 |  8  | `@angular/platform-browser`        | `^18.0.0`      |
 |  9  | `@angular/platform-browser-dynamic`| `^18.0.0`      |
 | 10  | `@angular/router`                  | `^18.0.0`      |
-| 11  | `@types/lodash`                   | `^4.17.7`      |
+| 11  | `@types/lodash`                    | `^4.17.7`      |
 | 12  | `rxjs`                             | `~7.8.0`       |
 | 13  | `tslib`                            | `^2.3.0`       |
-| 14  | `zone.js`                         | `~0.14.3`      |
+| 14  | `zone.js`                          | `~0.14.3`      |
 
 
 

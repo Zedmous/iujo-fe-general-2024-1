@@ -8,23 +8,44 @@ Es un frontend para una aplicacion web sobre gestión turistica.
 
 ## Integrantes de Equipo
 
-- Eduardo Nieves Email: zedmous@gmail.com
+| Instructores del Proyecto                                                  |
+|------------------------------| ------------------------------------------- |
+| Nombre                       | Email                                       |
+|------------------------------| ------------------------------------------- |
+| Eduardo Nieves               | zedmous@gmail.com                           |
+
+
+| Developers Frontend                                                        |
+|------------------------------| ------------------------------------------- |
+| Nombre                       | Email                                       |
+|------------------------------| ------------------------------------------- |
+| Example Example              | example@email.com                           |
+
+| Developers Backend                                                         |
+|------------------------------| ------------------------------------------- |
+| Nombre                       | Email                                       |
+|------------------------------| ------------------------------------------- |
+| Example Example              | example@email.com                           |
 
 ### Especificaciones técnicas / Referencias
 
 - Documentación oficial `https://expressjs.com/` 
 
 #### Requerimientos previos:
-
+- Html
+- Css
+- JavaScript
+- TypeScript
+- Angular
 - NodeJS
 - Npm
 
 #### Branches
 
 - master -> Production Service`https://example.com/api`
-- master -> Production Local ```http://localhost:3800/api```
+- master -> Production Local ```http://localhost:4200```
 - develop -> Develop Service `https://example.com/api`
-- develop -> Develop Local ```http://localhost:3800/api```
+- develop -> Develop Local ```http://localhost:4200```
 
 ### Configurar el entorno de desarrollo
 
@@ -33,11 +54,11 @@ Es un frontend para una aplicacion web sobre gestión turistica.
 
 1. Clonar el repositorio en tu máquina local con el comando 
 ```
-git clone https://github.com/Zedmous/test-bk-datanet.git
+git clone https://github.com/Zedmous/iujo-fe-general-2024-1.git
 ```
 2. Apuntar al directorio en la consola al proyecto con el comando 
 ```
-cd datanet-bk-test
+cd iujo-fe-general-2024-1
 ```
 2. Instalar las dependencias necesarias con el comando 
 ```
@@ -47,11 +68,7 @@ npm install
 copia pegalo renombra el nombre dejandole solo `.env` y colocale los valores correspodnientes
 4. Ejecutar el servidor de desarrollo con el comando 
 ```
-npm run dev
-```
-4. Ejercutar el servidor de produccion con el comando (previamente debes compilarlo con el comando `npm run comp`)
-```
-npm run start
+ng serve
 ```
 
 #### Comandos para desplegar funciones.

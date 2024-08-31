@@ -10,6 +10,7 @@ const routes: Routes = [
       {path:'generals',loadChildren:()=>import('./generals/generals.module').then(x=>x.GeneralsModule)},
       {path:'sales',loadChildren:()=>import('./sales/sales.module').then(x=>x.SalesModule)},
       {path:'restaurants',loadChildren:()=>import('./restaurants/restaurants.module').then(x=>x.RestaurantsModule)},
+      {path:'purchases',loadChildren:()=>import('./purchases/purchases.module').then(x=>x.PurchasesModule)}
     ]
   }
 ];

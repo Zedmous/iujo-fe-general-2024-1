@@ -21,8 +21,18 @@ export class SidebarComponent {
         link: './generals',
         open: false,
         subMenus: [
+          { text: 'Home', link: '/dashboard/generals' },
           { text: 'Roles', link: '/dashboard/generals/roles' },
           { text: 'Usuarios', link: '/dashboard/generals/users' },
+        ],
+      },
+      {
+        text: 'Inventory',
+        link: './inventories',
+        open: false,
+        subMenus: [
+          { text: 'Home', link: '/dashboard/inventories' },
+          { text: 'Reports', link: '/dashboard/inventories/reports' },
         ],
       },
       {
@@ -35,12 +45,19 @@ export class SidebarComponent {
         ],
       },
       {
+        text: 'Rrhh',
+        link: './rrhh',
+        open: false,
+        subMenus: [
+          { text: 'Concepts', link: '/dashboard/rrhh/concepts' },
+        ],
+      },
+      {
         text: 'Sales',
         link: './sales',
         open: false,
         subMenus: [
-          { text: 'Subopción 1', link: './sub1' },
-          { text: 'Subopción 2', link: './sub2' },
+          { text: 'Customers', link: '/dashboard/sales/customers' },
         ],
       },
     ];

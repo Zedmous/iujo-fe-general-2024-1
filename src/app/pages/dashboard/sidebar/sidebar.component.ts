@@ -43,6 +43,14 @@ export class SidebarComponent {
           { text: 'Subopción 2', link: './sub2' },
         ],
       },
+      {
+        text: 'Inventory',
+        link: './inventory',
+        open: false,
+        subMenus: [
+          { text: 'inventario-home', link: '/dashboard/inventory/inventory-home' },
+        ],
+      },
     ];
   }
 

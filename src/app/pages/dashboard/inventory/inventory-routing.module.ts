@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InventoryComponent } from './inventory.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'inventory-home',
+    component: InventoryComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

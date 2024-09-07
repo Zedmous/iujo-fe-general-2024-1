@@ -49,6 +49,7 @@ export class SidebarComponent {
         open: false,
         subMenus: [
           { text: 'inventario-home', link: '/dashboard/inventory/inventory-home' },
+          { text: 'formulario', link: '/dashboard/inventory/form-inventory' },
         ],
       },
     ];

@@ -1,1 +1,67 @@
-<p>inventory works!</p>
+<section class="container">
+    <div class="container-header">
+
+        <div class="search-bar">
+            <span>
+                Dashboard
+                <p>13 march 2024</p>
+            </span>
+            <mat-form-field class=" container-input">
+                <mat-label>Buscar</mat-label>
+                <input matInput value="">
+            </mat-form-field>
+        </div>
+
+        <div class="container-tasks">
+            <div class="task">
+                <img src="" alt="">
+                <span>
+                    1220
+                    <p>Total Task</p>
+                </span>
+            </div>
+            <div class="task">
+                <img src="" alt="">
+                <span>
+                    07
+                    <p>in Progress</p>
+                </span>
+            </div>
+            <div class="task">
+                <img src="" alt="">
+                <span>
+                    43
+                    <p>Pending</p>
+                </span>
+            </div>
+            <div class="task">
+                <img src="" alt="">
+                <span>
+                    1550
+                    <p>Completed</p>
+                </span>
+            </div>
+        </div>
+
+        <div class="container-graph">
+            <div class="graph">
+                <h4>Total Work</h4>
+            </div>
+            <div class="graph">
+                <h4>All expenses</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container-side">
+        <mat-card class="calendar">
+            <mat-calendar [(selected)]="selected"></mat-calendar>
+        </mat-card>
+    </div>
+
+    <div class="container-down">
+        <div class="container-request">
+            <h3>Solicitudes</h3>
+            <app-accordion-inventory></app-accordion-inventory>
+        </div>
+    </div>
+</section>

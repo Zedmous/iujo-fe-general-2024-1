@@ -15,11 +15,15 @@ Es un frontend para una aplicacion web sobre gestión turistica.
 | Eduardo Nieves               | zedmous@gmail.com                           |
 
 
+
 | Developers Frontend                                                        |
 |------------------------------| ------------------------------------------- |
 | Nombre                       | Email                                       |
 |------------------------------| ------------------------------------------- |
-| Example Example              | example@email.com                           |
+| Ricardo Palacios             | palaciosricardo2304@gmail.com               |
+|------------------------------| ------------------------------------------- |
+|                              |                                             |
+
 
 | Developers Backend                                                         |
 |------------------------------| ------------------------------------------- |

@@ -7,7 +7,7 @@ export interface SupplierInterface{
   fiscal_address:string;
   contributor:string;
   status?:boolean;
-  createdAt:Date;
-  updatedAt:Date;
-  deletedAt:Date;
+  createdAt?:Date;
+  updatedAt?:Date;
+  deletedAt?:Date;
 }

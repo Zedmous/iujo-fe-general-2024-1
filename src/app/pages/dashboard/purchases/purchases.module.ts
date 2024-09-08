@@ -5,9 +5,25 @@ import { SupplierAddFormComponent } from './components/supplier/supplier-add-for
 import { SupplierFormComponent } from './components/supplier/supplier-form/supplier-form.component';
 import { OrderFormComponent } from './components/order/order-form/order-form.component';
 import { OrderAddFormComponent } from './components/order/order-add-form/order-add-form.component';
-import { OrdersComponent } from './pages/orders/orders.component';
-import { SuppliersComponent } from './pages/suppliers/suppliers.component';
+
 import { PurchasesRoutingModule } from './purchases-routing.module';
+import { SuppliersTableComponent } from './components/supplier/suppliers-table/suppliers-table.component';
+import { OrdersTableComponent } from './components/order/orders-table/orders-table.component';
+import { OrdersEditFormComponent } from './components/order/orders-edit-form/orders-edit-form.component';
+import { SuppliersEditFormComponent } from './components/supplier/suppliers-edit-form/suppliers-edit-form.component';
+import { EditOrdersPageComponent } from './pages/orders/edit-orders-page/edit-orders-page.component';
+import { AddOrdersPageComponent } from './pages/orders/add-orders-page/add-orders-page.component';
+
+import { AddSupplierPageComponent } from './pages/suppliers/add-supplier-page/add-supplier-page.component';
+import { SupplierTablePageComponent } from './pages/suppliers/supplier-table-page/supplier-table-page.component';
+import { EditSupplierPageComponent } from './pages/suppliers/edit-supplier-page/edit-supplier-page.component';
+import { ServiceSupplierAddFormComponent } from './components/service_supplier/service-supplier-add-form/service-supplier-add-form.component';
+import { ServiceSupplierEditFormComponent } from './components/service_supplier/service-supplier-edit-form/service-supplier-edit-form.component';
+import { ServiceSupplierFormComponent } from './components/service_supplier/service-supplier-form/service-supplier-form.component';
+import { AddServiceSupplierPageComponent } from './pages/service_supplier/add-service-supplier-page/add-service-supplier-page.component';
+import { EditServiceSupplierPageComponent } from './pages/service_supplier/edit-service-supplier-page/edit-service-supplier-page.component';
+import { ServiceSupplierTablePageComponent } from './pages/service_supplier/service-supplier-table-page/service-supplier-table-page.component';
+
 
 
 
@@ -18,12 +34,26 @@ import { PurchasesRoutingModule } from './purchases-routing.module';
     SupplierFormComponent,
     OrderFormComponent,
     OrderAddFormComponent,
-    OrdersComponent,
-    SuppliersComponent
+    SuppliersTableComponent,
+    OrdersTableComponent,
+    OrdersEditFormComponent,
+    SuppliersEditFormComponent,
+    EditOrdersPageComponent,
+    AddOrdersPageComponent,
+    AddSupplierPageComponent,
+    SupplierTablePageComponent,
+    EditSupplierPageComponent,
+    ServiceSupplierAddFormComponent,
+    ServiceSupplierEditFormComponent,
+    ServiceSupplierFormComponent,
+    AddServiceSupplierPageComponent,
+    EditServiceSupplierPageComponent,
+    ServiceSupplierTablePageComponent,
+
   ],
   imports: [
     CommonModule,
-    PurchasesRoutingModule
+    PurchasesRoutingModule,
   ]
 })
 export class PurchasesModule { }

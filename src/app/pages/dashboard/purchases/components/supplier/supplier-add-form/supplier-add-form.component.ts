@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SuppliersService } from '../../../../../../core/services/suppliers.service';
 
 @Component({
   selector: 'app-supplier-add-form',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class SupplierAddFormComponent {
 
+  constructor( private supplierService : SuppliersService){}
+
+  public handlesubmit(){
+
+  }
 }

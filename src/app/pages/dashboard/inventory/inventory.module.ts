@@ -19,6 +19,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import { AccordionInventoryComponent } from './accordion-inventory/accordion-inventory.component';
+import { ListarComponent } from './listar/listar.component';
 
 
 
@@ -26,7 +27,8 @@ import { AccordionInventoryComponent } from './accordion-inventory/accordion-inv
   declarations: [
     InventoryComponent,
     FormInventoryComponent,
-    AccordionInventoryComponent
+    AccordionInventoryComponent,
+    
   ],
   imports: [
     CommonModule,

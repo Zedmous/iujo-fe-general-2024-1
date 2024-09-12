@@ -27,6 +27,15 @@ export class SidebarComponent {
         ],
       },
       {
+        text: 'Hotels',
+        link: './hotels',
+        open: false,
+        subMenus: [
+          { text: 'Hotel Home', link: '/dashboard/hotels' },
+          { text: 'Reports', link: '/dashboard/hotels/reports' },
+        ],
+      },
+      {
         text: 'Inventory',
         link: './inventories',
         open: false,

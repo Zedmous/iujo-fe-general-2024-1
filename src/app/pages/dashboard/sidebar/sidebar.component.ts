@@ -36,6 +36,15 @@ export class SidebarComponent {
         ],
       },
       {
+        text: 'Attractions',
+        link: './attractions',
+        open: false,
+        subMenus: [
+          { text: 'Attractions Home', link: '/dashboard/attractions' },
+          { text: 'Reports', link: '/dashboard/attractions/reports' },
+        ],
+      },
+      {
         text: 'Inventory',
         link: './inventories',
         open: false,

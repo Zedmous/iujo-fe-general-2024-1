@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PurchasesComponent } from './purchases.component';
 import { SupplierAddFormComponent } from './components/supplier/supplier-add-form/supplier-add-form.component';
-import { SupplierFormComponent } from './components/supplier/supplier-form/supplier-form.component';
-import { OrderFormComponent } from './components/order/order-form/order-form.component';
+
+
 import { OrderAddFormComponent } from './components/order/order-add-form/order-add-form.component';
 
 import { PurchasesRoutingModule } from './purchases-routing.module';
@@ -19,10 +19,12 @@ import { SupplierTablePageComponent } from './pages/suppliers/supplier-table-pag
 import { EditSupplierPageComponent } from './pages/suppliers/edit-supplier-page/edit-supplier-page.component';
 import { ServiceSupplierAddFormComponent } from './components/service_supplier/service-supplier-add-form/service-supplier-add-form.component';
 import { ServiceSupplierEditFormComponent } from './components/service_supplier/service-supplier-edit-form/service-supplier-edit-form.component';
-import { ServiceSupplierFormComponent } from './components/service_supplier/service-supplier-form/service-supplier-form.component';
+
 import { AddServiceSupplierPageComponent } from './pages/service_supplier/add-service-supplier-page/add-service-supplier-page.component';
 import { EditServiceSupplierPageComponent } from './pages/service_supplier/edit-service-supplier-page/edit-service-supplier-page.component';
 import { ServiceSupplierTablePageComponent } from './pages/service_supplier/service-supplier-table-page/service-supplier-table-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -31,8 +33,6 @@ import { ServiceSupplierTablePageComponent } from './pages/service_supplier/serv
   declarations: [
     PurchasesComponent,
     SupplierAddFormComponent,
-    SupplierFormComponent,
-    OrderFormComponent,
     OrderAddFormComponent,
     SuppliersTableComponent,
     OrdersTableComponent,
@@ -45,7 +45,6 @@ import { ServiceSupplierTablePageComponent } from './pages/service_supplier/serv
     EditSupplierPageComponent,
     ServiceSupplierAddFormComponent,
     ServiceSupplierEditFormComponent,
-    ServiceSupplierFormComponent,
     AddServiceSupplierPageComponent,
     EditServiceSupplierPageComponent,
     ServiceSupplierTablePageComponent,
@@ -54,6 +53,7 @@ import { ServiceSupplierTablePageComponent } from './pages/service_supplier/serv
   imports: [
     CommonModule,
     PurchasesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class PurchasesModule { }

@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+
   ]
 })
 export class DashboardModule { }

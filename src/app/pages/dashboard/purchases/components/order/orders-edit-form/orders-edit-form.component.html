@@ -1,1 +1,33 @@
-<p>orders-edit-form works!</p>
+
+
+<div class="wrapper">
+
+  <div class="container">
+    <div class="titulo">Registro de Ordenes</div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" action="#">
+        <div class="form-group">
+          <div class="form-group">
+            <span>Proveedor</span>
+            <select name="Tipo" formControlName="supplier_id" id="">
+                <option value="1">Seleccione</option>
+                <option value="2">V</option>
+                <option value="3">E</option>
+                <option value="4">J</option>
+                <option value="5">P</option>
+                <option value="6">G</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <span>descripcion</span>
+          <input type="date" formControlName="emitedAt" placeholder="ingrese Fecha de emision">
+        </div>
+
+
+        <div class="buton">
+            <input type="submit" value="Registrar">
+        </div>
+    </form>
+  </div>
+</div>
+

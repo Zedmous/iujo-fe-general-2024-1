@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SuppliersService } from '../../../../../../core/services/suppliers.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-supplier-add-form',
@@ -8,9 +10,26 @@ import { SuppliersService } from '../../../../../../core/services/suppliers.serv
 })
 export class SupplierAddFormComponent {
 
-  constructor( private supplierService : SuppliersService){}
+  myForm : FormGroup;
 
-  public handlesubmit(){
+  constructor( private supplierService : SuppliersService, private fb : FormBuilder){
+    this.myForm = this.fb.group({
+      name: ['', Validators.required],
+      code: ['', [Validators.required, Validators.pattern('^[0-9]{1,8}$')]],
+      city_id: [null, Validators.required],
+      telephone: [null, [Validators.required, Validators.pattern('^[0-9]*$')]],
+      fiscal_address: ['', Validators.required],
+      contributor: ['', Validators.required],
+    });
 
+
+  }
+
+  public onSubmit(){
+    console.log(this.myForm.valid)
+    if (this.myForm.valid) {
+      console.log(this.myForm.value);
+
+    }
   }
 }

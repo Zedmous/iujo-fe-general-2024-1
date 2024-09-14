@@ -1,0 +1,45 @@
+<div class="wrapper">
+
+  <div class="container">
+    <div class="titulo">Registro de Proveedor</div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" action="#">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" formControlName="name" placeholder="Ingrese Nombre o Empresa" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Cedula</label>
+        <input type="text" formControlName="code" placeholder="Ingrese cedula" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Ciudad</label>
+        <select formControlName="city_id" class="form-control">
+          <option value="">Seleccione</option>
+          <option value="V">V</option>
+          <option value="E">E</option>
+          <option value="J">J</option>
+          <option value="P">P</option>
+          <option value="G">G</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Telefono</label>
+        <input type="text" formControlName="telephone" placeholder="Ingrese telefono" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Direccion Fiscal</label>
+        <input type="text" formControlName="fiscal_address" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Nro Contibuidor</label>
+        <input type="text" formControlName="contributor" class="form-control">
+      </div>
+
+      <div class="buton">
+          <input  type="submit" [disabled]="myForm.invalid" value="Registrar">
+      </div>
+    </form>
+  </div>
+</div>
+

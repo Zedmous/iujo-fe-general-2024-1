@@ -24,7 +24,6 @@ import { AddServiceSupplierPageComponent } from './pages/service_supplier/add-se
 import { EditServiceSupplierPageComponent } from './pages/service_supplier/edit-service-supplier-page/edit-service-supplier-page.component';
 import { ServiceSupplierTablePageComponent } from './pages/service_supplier/service-supplier-table-page/service-supplier-table-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { OrdersTablePageComponent } from './pages/orders/orders-table-page/orders-table-page.component';
 
 
 
@@ -49,8 +48,7 @@ import { OrdersTablePageComponent } from './pages/orders/orders-table-page/order
     AddServiceSupplierPageComponent,
     EditServiceSupplierPageComponent,
     ServiceSupplierTablePageComponent,
-    OrdersTableComponent,
-    OrdersTablePageComponent
+
   ],
   imports: [
     CommonModule,

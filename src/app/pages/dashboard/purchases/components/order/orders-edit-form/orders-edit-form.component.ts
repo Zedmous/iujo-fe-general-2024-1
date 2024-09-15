@@ -58,7 +58,7 @@ export class OrdersEditFormComponent implements OnInit {
         emitedAt: new Date(this.myForm.value.emitedAt),
         supplier_id: Number(this.myForm.value.supplier_id)
       };
-      this.ordersService.update( +this.ordersId!, {...formValue},)
+      console.log(formValue);
     }
   }
 }

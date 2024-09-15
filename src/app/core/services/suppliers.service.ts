@@ -9,18 +9,18 @@ import { SupplierInterface } from '../interfaces/supplier.interface';
 })
 export class SuppliersService {
 
-  private apiUrl = `http://localhost:3000/supplier`;
+  private apiUrl = ``;
 
   constructor(private http: HttpClient) { }
 
   //agregar un proveedor
   public set(supplier: SupplierInterface): Observable<any> {
-    return this.http.post(`${this.apiUrl}`, supplier);
+    return this.http.post(this.apiUrl, supplier);
   }
 
   //obtener todos los proveedores
   public get(): Observable<SupplierInterface[]> {
-    return this.http.get<SupplierInterface[]>(this.apiUrl);
+    return this.http.get<any[]>(this.apiUrl);
   }
 
   //obtener un proveedor por ID

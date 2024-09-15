@@ -28,7 +28,12 @@ export class SupplierAddFormComponent {
   public onSubmit(){
     console.log(this.myForm.valid)
     if (this.myForm.valid) {
-      console.log(this.myForm.value);
+      const formValues = {
+        ...this.myForm.value,
+        city_id: Number(this.myForm.value.city_id)
+      };
+
+      this.supplierService.set(formValues);
 
     }
   }

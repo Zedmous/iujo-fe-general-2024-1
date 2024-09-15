@@ -1,1 +1,44 @@
-<p>suppliers-table works!</p>
+<div class="container">
+  <div class="flowRoot">
+    <div class="tableWrapper">
+      <div class="tableContainer">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Código</th>
+              <th>Ciudad ID</th>
+              <th>Teléfono</th>
+              <th>Dirección Fiscal</th>
+              <th>Contribuyente</th>
+              <th>Estado</th>
+              <th>Creado el</th>
+              <th>Editado el</th>
+              <th class="actions">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let supplier of suppliers | async">
+              <td>{{ supplier.id }}</td>
+              <td>{{ supplier.name }}</td>
+              <td>{{ supplier.code }}</td>
+              <td>{{ supplier.city_id }}</td>
+              <td>{{ supplier.telephone }}</td>
+              <td>{{ supplier.fiscal_address }}</td>
+              <td>{{ supplier.contributor }}</td>
+              <td>{{ supplier.status ? 'Activo' : 'Inactivo' }}</td>
+              <td>{{ supplier.createdAt | date:'short' }}</td>
+              <td>{{ supplier.updatedAt | date:'short' }}</td>
+              <td class="actions">
+                <button (click)="editSupplier(supplier.id)">Editar</button>
+                <button (click)="deleteSupplier(supplier.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { OrdersService } from '../../../../../../core/services/orders.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PurchaseOrderInterface } from '../../../../../../core/interfaces/purchase_order.interface';
 
 @Component({
   selector: 'app-order-add-form',
@@ -22,12 +21,12 @@ export class OrderAddFormComponent {
   public onSubmit(){
     console.log(this.myForm.valid)
     if (this.myForm.valid) {
-      const formValue : PurchaseOrderInterface = {
+      const formValue = {
         ...this.myForm.value,
         emitedAt: new Date(this.myForm.value.emitedAt),
         supplier_id: Number(this.myForm.value.supplier_id) // Convertir a número
     };
-    this.ordersService.set({...formValue})
+    console.log(formValue);
     }
   }
 }

@@ -69,6 +69,16 @@ export class SidebarComponent {
           { text: 'Customers', link: '/dashboard/sales/customers' },
         ],
       },
+      {
+        text: 'Purchases',
+        link: './purchases',
+        open: false,
+        subMenus: [
+          { text: 'Orders', link: '/dashboard/purchases/orders' },
+          { text: 'Suppliers', link: '/dashboard/purchases/suppliers' },
+          { text: 'Suppliers Services', link: '/dashboard/purchases/suppliers_services' }
+        ],
+      },
     ];
   }
 

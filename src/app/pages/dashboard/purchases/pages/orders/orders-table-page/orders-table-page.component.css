@@ -1,0 +1,13 @@
+
+
+.button a{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size:medium;
+  padding: 10px;
+  background-color: dodgerblue;
+  width: 100px;
+  text-align: center;
+  border-radius: 10px;
+ }

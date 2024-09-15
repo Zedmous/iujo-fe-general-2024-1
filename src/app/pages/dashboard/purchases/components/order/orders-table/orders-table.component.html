@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="flowRoot">
+    <div class="tableWrapper">
+      <div class="tableContainer">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>ID del Proveedor</th>
+              <th>Emitido el</th>
+              <th>Creado el</th>
+              <th>Editado el</th>
+              <th>Estado</th>
+              <th class="actions">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders | async">
+              <td>{{ order.id }}</td>
+              <td>{{ order.supplier_id }}</td>
+              <td>{{ order.emitedAt | date:'short' }}</td>
+              <td>{{ order.createdAt | date:'short' }}</td>
+              <td>{{ order.updatedAt | date:'short' }}</td>
+              <td>{{ order.status }}</td>
+              <td class="actions">
+                <button (click)="editOrder(order.id)">Editar</button>
+                <button (click)="deleteOrder(order.id)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

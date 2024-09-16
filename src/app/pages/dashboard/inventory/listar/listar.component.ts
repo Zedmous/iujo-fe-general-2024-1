@@ -52,7 +52,7 @@ export class ListarComponent {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
-    // Assign the data to the data source for the table to render
+    // Assign the data to the data source for the table to rende
     this.dataSource = new MatTableDataSource(ELEMENT_DATA);
   }
 

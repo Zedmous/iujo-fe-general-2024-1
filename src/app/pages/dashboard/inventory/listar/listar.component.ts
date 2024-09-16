@@ -11,21 +11,21 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 export interface PeriodicElement {
   position: string;
   name: string;  
-  weight: string;
-  symbol: string;
+  Categoria: string;
+  Precio: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: '1', name: 'Harina', weight: 'alimentos', symbol: '20'},
-  {position: '2', name: 'Arroz', weight: 'alimentos', symbol: '10'},
-  {position: '3', name: 'Pasta', weight: 'alimentos', symbol: '15'},
-  {position: '4', name: 'Jabon', weight:' Higiene', symbol: '6'},
-  {position: '5', name: 'Shampoo', weight: 'Higiene', symbol: '8'},
-  {position: '6', name: 'Sabanas', weight: 'Ropa de cama', symbol: '20'},
-  {position: '7', name: 'Toallas', weight: 'Toallas de baño', symbol: '17'},
-  {position: '8', name: 'Malta', weight: 'Bebidas', symbol: '9'},
-  {position: '9', name: 'Refrescos', weight: 'Bebidas', symbol: '50'},
-  {position: '10', name: 'Jugos', weight: 'Bebidas', symbol: '40'},
+  {position: '1', name: 'Harina', Categoria: 'alimentos', Precio: '20'},
+  {position: '2', name: 'Arroz', Categoria: 'alimentos', Precio: '10'},
+  {position: '3', name: 'Pasta', Categoria: 'alimentos', Precio: '15'},
+  {position: '4', name: 'Jabon', Categoria:' Higiene', Precio: '6'},
+  {position: '5', name: 'Shampoo', Categoria: 'Higiene', Precio: '8'},
+  {position: '6', name: 'Sabanas', Categoria: 'Ropa de cama', Precio: '20'},
+  {position: '7', name: 'Toallas', Categoria: 'Toallas de baño', Precio: '17'},
+  {position: '8', name: 'Malta', Categoria: 'Bebidas', Precio: '9'},
+  {position: '9', name: 'Refrescos', Categoria: 'Bebidas', Precio: '50'},
+  {position: '10', name: 'Jugos', Categoria: 'Bebidas', Precio: '40'},
 ];
 
 @Component({
@@ -38,7 +38,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 export class ListarComponent {
   
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'Categoria', 'Precio'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   
@@ -82,8 +82,8 @@ function createNewUser(position: number): PeriodicElement {
   return {
     position: position.toString(),
     name: PeriodicElement,
-    weight: Math.round(Math.random() * 100).toString(),
-    symbol: Math.round(Math.random() *  100).toString()
+    Categoria: Math.round(Math.random() * 100).toString(),
+    Precio: Math.round(Math.random() *  100).toString()
   };
 }
  /* applyFilter(event: Event) {

@@ -58,7 +58,9 @@ export class SidebarComponent {
         link: './rrhh',
         open: false,
         subMenus: [
+          { text: 'Home', link: '/dashboard/rrhh' },
           { text: 'Concepts', link: '/dashboard/rrhh/concepts' },
+          { text: 'Staff', link: '/dashboard/rrhh/staff' }
         ],
       },
       {

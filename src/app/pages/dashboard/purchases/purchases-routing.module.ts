@@ -10,6 +10,7 @@ import { PurchasesComponent } from './purchases.component';
 import { EditServiceSupplierPageComponent } from './pages/service_supplier/edit-service-supplier-page/edit-service-supplier-page.component';
 import { AddServiceSupplierPageComponent } from './pages/service_supplier/add-service-supplier-page/add-service-supplier-page.component';
 import { ServiceSupplierTablePageComponent } from './pages/service_supplier/service-supplier-table-page/service-supplier-table-page.component';
+import { ServicesMonthlyReportComponent } from './pages/reports/services-monthly-report/services-monthly-report.component';
 
 
 const routes: Routes = [
@@ -52,7 +53,12 @@ const routes: Routes = [
   {
     path: 'suppliers_services/edit/:id',
     component: EditServiceSupplierPageComponent
-  }
+  },
+  {
+    path: 'monthlyservice',
+    component : ServicesMonthlyReportComponent,
+  },
+  
 
 ];
 

@@ -25,6 +25,7 @@ import { EditServiceSupplierPageComponent } from './pages/service_supplier/edit-
 import { ServiceSupplierTablePageComponent } from './pages/service_supplier/service-supplier-table-page/service-supplier-table-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrdersTablePageComponent } from './pages/orders/orders-table-page/orders-table-page.component';
+import { ServicesMonthlyReportComponent } from './pages/reports/services-monthly-report/services-monthly-report.component';
 
 
 
@@ -50,7 +51,8 @@ import { OrdersTablePageComponent } from './pages/orders/orders-table-page/order
     EditServiceSupplierPageComponent,
     ServiceSupplierTablePageComponent,
     OrdersTableComponent,
-    OrdersTablePageComponent
+    OrdersTablePageComponent,
+    ServicesMonthlyReportComponent
   ],
   imports: [
     CommonModule,

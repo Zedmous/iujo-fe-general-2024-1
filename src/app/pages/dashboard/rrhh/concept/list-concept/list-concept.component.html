@@ -1,7 +1,67 @@
 <div class="container">
-  <h2 mat-dialog-title>Concepts</h2>
-
-  <mat-dialog-actions>
+  <mat-toolbar>
+    <span>Concepts</span>
+    <span class="example-spacer"></span>
     <button mat-raised-button color="primary" (click)="add()">Agregar</button>
-  </mat-dialog-actions>
+  </mat-toolbar>
+
+  <mat-spinner *ngIf="loading" class="spinner"></mat-spinner>
+
+  <div *ngIf="!loading">
+    <mat-form-field appearance="fill">
+      <mat-label>Búsqueda por Filtro</mat-label>
+      <input
+        matInput
+        (keyup)="applyFilter($event)"
+        placeholder="Ejemplo: Descuento"
+        #input
+        autocomplete="off"
+      />
+    </mat-form-field>
+
+    <div class="mat-elevation-z10">
+      <table mat-table matSort [dataSource]="dataSource">
+
+        <ng-container matColumnDef="namedeductions">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre de Deducción</th>
+          <td mat-cell *matCellDef="let element">{{ element.namedeductions }}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="tipeconcept">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo de Concepto</th>
+          <td mat-cell *matCellDef="let element">{{ element.tipeconcept }}</td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td
+            mat-cell
+            *matCellDef="let element; let i = index"
+            style="text-align: right"
+          >
+            <a
+              class="pointer search"
+              matTooltip="Ver concepto"
+              (click)="getOne(element)"
+            >
+              <mat-icon>search</mat-icon>
+            </a>
+            <a
+              class="pointer edit"
+              matTooltip="Editar concepto"
+              (click)="edit(element)"
+            >
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a
+              class="pointer delete"
+              matTooltip="Eliminar concepto"
+              (click)="eliminar(element, i)"
+            >
+              <mat-icon>delete</mat-icon>
+            </a>
+          </td>
+        </ng-container>
 

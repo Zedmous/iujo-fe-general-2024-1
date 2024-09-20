@@ -1,0 +1,61 @@
+<div class="container">
+  <h2 mat-dialog-title class="titulo">{{ title }} Concepto</h2>
+
+  <mat-dialog-content class="formulario">
+    <form [formGroup]="forms">
+      <mat-form-field class="caja" appearance="fill">
+        <mat-label>Nombre de Deducción</mat-label>
+        <input
+          matInput
+          placeholder="Ejemplo: Descuento"
+          formControlName="namedeductions"
+          type="text"
+          autocomplete="off"
+        />
+        <!-- Mensaje de error si el campo es requerido -->
+        <mat-error *ngIf="namedeductions?.hasError('required')">El nombre de deducción es requerido.</mat-error>
+        <!-- Mensaje de error personalizado -->
+        <mat-error *ngIf="nameError">{{ nameError }}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="caja" appearance="fill">
+        <mat-label>Tipo de Concepto</mat-label>
+        <input
+          matInput
+          placeholder="Ejemplo: Tipo A"
+          formControlName="tipeconcept"
+          type="text"
+          autocomplete="off"
+        />
+        <!-- Mensaje de error si el campo es requerido -->
+        <mat-error *ngIf="tipeconcept?.hasError('required')">El tipo de concepto es requerido.</mat-error>
+      </mat-form-field>
+
+      <br />
+      <br />
+    </form>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="botones">
+    <button
+      type="button"
+      [disabled]="forms.invalid || concept.action === 'ver'"
+      mat-raised-button
+      class="boton"
+      color="primary"
+      (click)="save()"
+    >
+      Aceptar
+    </button>
+    <span class="example-spacer"></span>
+    <button
+      mat-dialog-close
+      type="button"
+      mat-raised-button
+      class="boton"
+      color="primary"
+    >
+      Volver
+    </button>
+  </mat-dialog-actions>
+</div>

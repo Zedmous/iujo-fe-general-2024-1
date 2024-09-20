@@ -11,19 +11,19 @@ import { FormConceptComponent } from '../form-concept/form-concept.component';
 @Component({
   selector: 'app-list-concept',
   templateUrl: './list-concept.component.html',
-  styleUrl: './list-concept.component.css'
+  styleUrls: ['./list-concept.component.css'] // Asegúrate de que este archivo exista
 })
 export class ListConceptComponent implements OnInit, AfterViewInit {
   loading: boolean = false;
-  concept: ConceptsInterface[] = [];
+  concepts: ConceptsInterface[] = []; // Esta variable no se usa directamente, puedes eliminarla
   displayedColumns: string[] = ['namedeductions', 'tipeconcept', 'acciones'];
-  dataSource = new MatTableDataSource(this.concept);
+  dataSource = new MatTableDataSource<ConceptsInterface>(this.concepts);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(
-    private ConceptService: ConceptService,
+    private conceptService: ConceptService,
     private snackBar: MatSnackBar,
     private dialog: MatDialog
   ) {}
@@ -44,10 +44,18 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
 
   getAll() {
     this.loading = true;
-    this.ConceptService.getAll().subscribe(
+    this.conceptService.getAll().subscribe(
       (res: any) => {
         this.loading = false;
-        this.dataSource = new MatTableDataSource(res.data.concepts); // Asegúrate de que la respuesta tenga la estructura correcta
+        if (res.data && res.data.concepts) {
+          this.dataSource.data = res.data.concepts; // Asegúrate de que la respuesta tenga la estructura correcta
+        } else {
+          this.snackBar.open('No se encontraron conceptos', '', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom',
+          });
+        }
       },
       (err: any) => {
         this.loading = false;
@@ -61,11 +69,11 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
   }
 
   eliminar(element: ConceptsInterface, i: number) {
-    this.ConceptService.delete(element.idconcepts).subscribe(
+    this.conceptService.delete(element.idconcepts).subscribe(
       () => {
         let concepts = this.dataSource.data;
         concepts.splice(i, 1);
-        this.dataSource.data = concepts;
+        this.dataSource.data = concepts; // Actualiza la fuente de datos
         this.snackBar.open('Concepto eliminado exitosamente', '', {
           duration: 1500,
           horizontalPosition: 'center',
@@ -85,7 +93,7 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
   }
 
   async getOne(element: ConceptsInterface) {
-    element.action = 'ver';
+    element.action = 'ver'; // Establece la acción para ver el concepto
     const addedData = await this.dialog
       .open(FormConceptComponent, {
         width: '600px',
@@ -96,7 +104,7 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
       .afterClosed()
       .toPromise();
 
-
+    // Aquí puedes manejar el resultado si es necesario
   }
 
   async add() {
@@ -113,7 +121,7 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
 
     if (!addedData) return;
 
-    this.dataSource.data = [addedData, ...this.dataSource.data];
+    this.dataSource.data = [addedData, ...this.dataSource.data]; // Agrega el nuevo concepto a la lista
     this.snackBar.open('Concepto agregado exitosamente', '', {
       duration: 1500,
       horizontalPosition: 'center',
@@ -122,7 +130,7 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
   }
 
   async edit(concept: ConceptsInterface) {
-    concept.action = 'editar';
+    concept.action = 'editar'; // Establece la acción para editar el concepto
     const updatedData = await this.dialog
       .open(FormConceptComponent, {
         width: '600px',
@@ -139,7 +147,7 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
     const itemIndex = list.findIndex((i) => i.idconcepts === updatedData.idconcepts);
 
     if (itemIndex !== -1) {
-      list[itemIndex] = updatedData;
+      list[itemIndex] = updatedData; // Actualiza el concepto en la lista
       this.dataSource.data = [...list];
     }
   }

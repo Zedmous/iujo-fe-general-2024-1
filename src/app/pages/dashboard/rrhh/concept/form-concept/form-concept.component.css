@@ -1,0 +1,12 @@
+.formulario {
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+}
+
+.mat-form-field {
+  margin-bottom: 16px; /* Espacio entre los campos de formulario */
+}
+
+.botones {
+  margin-top: 20px; /* Espacio entre el contenido del formulario y los botones */
+}

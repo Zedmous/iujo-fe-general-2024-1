@@ -15,9 +15,8 @@ import { FormConceptComponent } from '../form-concept/form-concept.component';
 })
 export class ListConceptComponent implements OnInit, AfterViewInit {
   loading: boolean = false;
-  concepts: ConceptsInterface[] = []; // Esta variable no se usa directamente, puedes eliminarla
   displayedColumns: string[] = ['namedeductions', 'tipeconcept', 'acciones'];
-  dataSource = new MatTableDataSource<ConceptsInterface>(this.concepts);
+  dataSource = new MatTableDataSource<ConceptsInterface>([]);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -48,7 +47,7 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
       (res: any) => {
         this.loading = false;
         if (res.data && res.data.concepts) {
-          this.dataSource.data = res.data.concepts; // Asegúrate de que la respuesta tenga la estructura correcta
+          this.dataSource.data = res.data.concepts; // Asigna los conceptos a la fuente de datos
         } else {
           this.snackBar.open('No se encontraron conceptos', '', {
             duration: 3000,
@@ -59,6 +58,7 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
       },
       (err: any) => {
         this.loading = false;
+        console.error('Error al cargar los conceptos', err);
         this.snackBar.open('Error al cargar los conceptos', '', {
           duration: 3000,
           horizontalPosition: 'center',
@@ -71,8 +71,7 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
   eliminar(element: ConceptsInterface, i: number) {
     this.conceptService.delete(element.idconcepts).subscribe(
       () => {
-        let concepts = this.dataSource.data;
-        concepts.splice(i, 1);
+        const concepts = this.dataSource.data.filter((_, index) => index !== i); // Filtra el concepto eliminado
         this.dataSource.data = concepts; // Actualiza la fuente de datos
         this.snackBar.open('Concepto eliminado exitosamente', '', {
           duration: 1500,
@@ -81,7 +80,8 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
         });
       },
       (err: any) => {
-        if (err.status == 422) {
+        console.error('Error al eliminar el concepto', err);
+        if (err.status === 422) {
           this.snackBar.open(err.error.error, '', {
             duration: 5000,
             horizontalPosition: 'center',
@@ -108,13 +108,13 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
   }
 
   async add() {
-    let concept: Partial<ConceptsInterface> = {};
+    const newConcept: Partial<ConceptsInterface> = {}; // Inicializa un nuevo concepto vacío
     const addedData = await this.dialog
       .open(FormConceptComponent, {
         width: '600px',
         height: '500px',
         disableClose: true,
-        data: concept,
+        data: newConcept,
       })
       .afterClosed()
       .toPromise();
@@ -148,7 +148,12 @@ export class ListConceptComponent implements OnInit, AfterViewInit {
 
     if (itemIndex !== -1) {
       list[itemIndex] = updatedData; // Actualiza el concepto en la lista
-      this.dataSource.data = [...list];
+      this.dataSource.data = [...list]; // Asigna la lista actualizada a la fuente de datos
+      this.snackBar.open('Concepto actualizado exitosamente', '', {
+        duration: 1500,
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
     }
   }
 }

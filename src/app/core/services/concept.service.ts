@@ -8,26 +8,23 @@ import { ConceptsInterface } from '../interfaces/concept.interface';
   providedIn: 'root'
 })
 export class ConceptService {
-  private route:string="/concepts";
-  constructor(
-    private http: HttpClient,
-  )
-  { }
+  private route: string = '/concepts'; // Ruta base para los conceptos
 
-  getAll():Observable<any> {
-    return this.http.get<any>(`${environment.apiUrl}${this.route}`);
+  constructor(private http: HttpClient) {}
+
+  getAll(): Observable<ConceptsInterface[]> {
+    return this.http.get<ConceptsInterface[]>(`${environment.apiUrl}${this.route}`);
   }
 
-  create(request: Partial<ConceptsInterface> ): Observable<any> {
-    return this.http.post<any>(`${environment.apiUrl}${this.route}`, request);
+  create(request: Partial<ConceptsInterface>): Observable<ConceptsInterface> {
+    return this.http.post<ConceptsInterface>(`${environment.apiUrl}${this.route}`, request);
   }
-  update(id: any, request: Partial<ConceptsInterface>) {
-    return this.http.put<void>(
-      `${environment.apiUrl}${this.route}/${id}`,
-      request
-    );
+
+  update(id: number, request: Partial<ConceptsInterface>): Observable<void> {
+    return this.http.put<void>(`${environment.apiUrl}${this.route}/${id}`, request);
   }
-  delete(id: string|any) {
+
+  delete(id: number): Observable<void> {
     return this.http.delete<void>(`${environment.apiUrl}${this.route}/${id}`);
   }
 }

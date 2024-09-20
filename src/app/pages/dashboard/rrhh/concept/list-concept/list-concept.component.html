@@ -65,3 +65,20 @@
           </td>
         </ng-container>
 
+<tr mat-header-row *matHeaderRowDef="['namedeductions', 'tipeconcept', 'acciones']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['namedeductions', 'tipeconcept', 'acciones']"></tr>
+      </table>
+
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Seleccionar página de conceptos"
+      ></mat-paginator>
+    </div>
+  </div>
+
+  <h2 style="text-align: center" *ngIf="dataSource.data.length === 0 && !loading">
+    No hay registros que mostrar
+  </h2>
+
+
+
